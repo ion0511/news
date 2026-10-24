@@ -68,9 +68,9 @@
                     </div>
                     <span class="font-bold text-lg tracking-tight">대한뉴스 & X 피드</span>
                 </div>
-                <div class="flex items-center space-x-4 text-[#71767b]">
+                <div class="flex items-center space-x-2 text-[#71767b]">
                     <button onclick="app.filterFeed('all')" class="text-xs px-3 py-1.5 rounded-full bg-[#16181c] border border-[#2f3336] text-[#e7e9ea] font-medium hover:bg-[#2f3336] transition">전체</button>
-                    <button onclick="app.filterFeed('trending')" class="text-xs px-3 py-1.5 rounded-full bg-[#16181c] border border-[#2f3336] text-[#71767b] hover:text-[#e7e9ea] hover:bg-[#2f3336] transition"><i class="fa-solid fa-fire text-amber-500 mr-1"></i>실시간 급상승</button>
+                    <button onclick="app.filterFeed('trending')" class="text-xs px-3 py-1.5 rounded-full bg-[#16181c] border border-[#2f3336] text-[#71767b] hover:text-[#e7e9ea] hover:bg-[#2f3336] transition"><i class="fa-solid fa-fire text-amber-500 mr-1"></i>급상승</button>
                 </div>
             </div>
             <!-- Sub tabs -->
@@ -133,7 +133,7 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Data Store
+        // Data Store (포스팅 수 대폭 확장)
         const tweetsData = [
             {
                 id: 'breaking-1',
@@ -145,10 +145,10 @@
                     verified: true
                 },
                 time: '12분 전',
-                content: `[단독/속보] "선황의 약속 지켰다"... 황태자 오시온, 한예고 재학 중인 일반인 여고생 이여주와 '전격 국혼' 발표\n\n대한민국 황실이 거센 여론의 파장을 무릅쓰고 황태자 오시온(19)의 전격 국혼을 공식 발표했습니다. 예비 황태자비는 한국예술고 미술과 3학년 이여주 양입니다.\n\n👇 자세한 기사 전문 및 황실 브리핑 전문 보기`,
+                content: `[단독/속보] "선황의 약속 지켰다"... 황태자 오시온, 한예고 재학 중인 일반인 여고생 이여주와 '전격 국혼' 발표\n\n대한민국 황실이 거센 여론의 파장을 무릅쓰고 황태자 오시온(19)의 전격 국혼을 공식 발표했습니다. 예비 황태자비는 한국예술고 미술과 3학년 이여주 양입니다.\n\n👇 링크를 눌러 자세한 기사 전문 및 황실 브리핑을 확인하세요.`,
                 hasArticle: true,
-                image: 'https://placehold.co/600x350/111827/e2e8f0?text=Crown+Prince+Oh+Sion+and+Lee+Yeoju+Royal+Announcement',
-                stats: { replies: 1,420, reposts: 3,590, likes: 12,400, views: '154K' },
+                image: 'https://placehold.co/600x350/111827/e2e8f0?text=Crown+Prince+Oh+Sion+and+Lee+Yeoju+Photo1',
+                stats: { replies: 1420, reposts: 3590, likes: 12400, views: '154K' },
                 userLiked: false,
                 userReposted: false
             },
@@ -162,7 +162,7 @@
                 },
                 time: '8분 전',
                 content: `아니 여주가 진짜 황태자비라고???? 내 옆자리에서 어제 같이 미술 수행평가 하던 걔가 맞냐고 지금 손떨려서 붓 떨어뜨림ㅋㅋㅋㅋㅋ 폼 미쳤다 진짜 미치겠네 개웃기네 ㅋㅋㅋㅋ`,
-                stats: { replies: 48, reposts: 215, likes: 1,890, views: '45K' },
+                stats: { replies: 48, reposts: 215, likes: 1890, views: '45K' },
                 userLiked: false,
                 userReposted: false
             },
@@ -191,7 +191,7 @@
                 time: '20분 전',
                 content: `[속보] 현재 한예고 앞 취재진 150명 돌파ㅋㅋ 경호실 차량 깔리고 교문 봉쇄됨. 실화냐 현대판 신데렐라 그 자체임 ㅋㅋㅋㅋ`,
                 image: 'https://placehold.co/600x300/1f2937/9ca3af?text=Korea+Arts+High+School+Chaos',
-                stats: { replies: 89, reposts: 430, likes: 2,310, views: '67K' },
+                stats: { replies: 89, reposts: 430, likes: 2310, views: '67K' },
                 userLiked: false,
                 userReposted: false
             },
@@ -205,7 +205,7 @@
                 },
                 time: '25분 전',
                 content: `오늘자 대한민국 직장인 & 학생들 반응 요약.jpg\n\n- 황태자: 19세\n- 예비 황태자비: 한예고 3학년 일반인 여고생\n- 선황의 70년 전 약속: ???\n\n꿈인가?ㅋㅋㅋㅋㅋㅋㅋ`,
-                stats: { replies: 120, reposts: 1540, likes: 8,900, views: '98K' },
+                stats: { replies: 120, reposts: 1540, likes: 8900, views: '98K' },
                 userLiked: false,
                 userReposted: false
             },
@@ -237,6 +237,7 @@
                 userLiked: false,
                 userReposted: false
             },
+            {
                 id: 8,
                 author: {
                     name: '고닉',
@@ -246,10 +247,11 @@
                 },
                 time: '40분 전',
                 content: `간택 해주면 안 되는 거임? 당신의 간택을 기다리는 사람이 지금 몇 만명인데?`,
-                stats: { replies: 61, reposts: 46, likes: 1,210, views: '29K' },
+                stats: { replies: 61, reposts: 46, likes: 1210, views: '29K' },
                 userLiked: false,
                 userReposted: false
             },
+            {
                 id: 9,
                 author: {
                     name: '토끼얌',
@@ -273,7 +275,35 @@
                 },
                 time: '45분 전',
                 content: `선황의 약속이라는 명분이지만 고3 학생을 상대로 이렇게 전격적으로 국혼을 밀어붙이는 건 대중과의 소통이 너무 부족했습니다. 황실 지지율 타격 피하기 어려울 듯.`,
-                stats: { replies: 215, reposts: 188, likes: 1,450, views: '38K' },
+                stats: { replies: 215, reposts: 188, likes: 1450, views: '38K' },
+                userLiked: false,
+                userReposted: false
+            },
+            {
+                id: 11,
+                author: {
+                    name: '팝콘러',
+                    handle: 'popcorn_master',
+                    avatar: 'https://placehold.co/100x100/f97316/ffffff?text=🍿',
+                    verified: false
+                },
+                time: '50분 전',
+                content: `아니 국혼 스케일이 무슨 판타지 소설 도입부 급이네ㅋㅋㅋ 이여주 양 오늘부터 경호원 붙는 거 아님?`,
+                stats: { replies: 19, reposts: 31, likes: 520, views: '9K' },
+                userLiked: false,
+                userReposted: false
+            },
+            {
+                id: 12,
+                author: {
+                    name: '대한제국역사모임',
+                    handle: 'history_kr',
+                    avatar: 'https://placehold.co/100x100/06b6d4/ffffff?text=📚',
+                    verified: false
+                },
+                time: '1시간 전',
+                content: `70년 전 선황 유교 내용 원본 찾아봤는데 진짜 이씨 가문과의 약조 조항이 있긴 하네;;; 황실법 진짜 무서운 거였구나`,
+                stats: { replies: 88, reposts: 310, likes: 1650, views: '33K' },
                 userLiked: false,
                 userReposted: false
             }
@@ -414,7 +444,7 @@
             },
 
             showNotifications() {
-                this.showToast('새로운 알림: 회원님의 트윗이 14명이 리포스트했습니다.');
+                this.showToast('새로운 알림: 회원님의 트윗을 14명이 리포스트했습니다.');
             },
 
             showBookmarks() {
@@ -560,7 +590,7 @@
                             <p>황실 대변인실은 24일 오전 긴급 브리핑을 통해 "황태자 오시온 전하의 국혼을 예정대로 거행하기로 확정했다"며, "예비 황태자비는 현재 한국예술고등학교 미술과 3학년에 재학 중인 이여주 양"이라고 밝혔다.</p>
 
                             <h3 class="text-lg font-bold text-white pt-2 border-t border-[#2f3336]">■ "황실의 신의 지키겠다"… 70년 전 선황의 약조가 계기</h3>
-                            <p>이번 국혼은 과거 선황(先皇)과 예비 황태자비 이여주 양의 평생지기였던 조부 사이에 맺어진 약조에 따른 것으로 알려졌다. 황실 관계자는 "선황 폐하께서 생전에 남기신 친필 유교(遺敎)에 따라 국혼 추진이 결정됐다"며 "황실의 신의를 지키고 국민과의 약속을 이행하겠다는 황실의 의지가 반영된 결정"이라고 설명했다.</p>
+                            <p>이번 국혼은 과거 선황(先皇)과 예비 황태자비 이여주 양의 평생지기였던 조부 사이에 맺어진 약조에 따른 것으로 알려졌다. 황실 관계자는 "선황 전하께서 생전에 남기신 친필 유교(遺敎)에 따라 국혼 추진이 결정됐다"며 "황실의 신의를 지키고 국민과의 약속을 이행하겠다는 황실의 의지가 반영된 결정"이라고 설명했다.</p>
                             
                             <p>황태자 오시온은 현재 황실 특례 및 관례에 따라 황태자 신분을 유지하며 학업과 황실 공무를 병행 중이다. 황실 측은 "예비 황태자비 역시 학업(한국예술고 3학년)을 마칠 때까지 황실과 학교 측의 협조 아래 신변 보호 및 비공개 수업 구성을 적극 검토할 것"이라고 덧붙였다.</p>
 
@@ -581,57 +611,72 @@
                     <section class="p-4 bg-[#000000]">
                         <h3 class="font-bold text-base mb-4 flex items-center justify-between">
                             <span>실시간 네티즌 반응 및 댓글</span>
-                            <span class="text-xs text-[#71767b] font-normal">총 ${commentsData.length}개 반응</span>
+                            <span class="text-xs text-[#71767b] font-normal" id="commentCount">총 ${commentsData.length}개 반응</span>
                         </h3>
 
                         <!-- Add Comment Input Box -->
-                        <div class="flex space-x-3 mb-6 bg-[#16181c] p-3 rounded-2xl border border-[#2f3336]">
-                            <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">나</div>
+                        <div class="mb-6 flex space-x-3 bg-[#16181c] p-3 rounded-xl border border-[#2f3336]">
+                            <div class="w-8 h-8 rounded-full bg-[#1d9bf0] flex items-center justify-center font-bold text-white text-xs flex-shrink-0">나</div>
                             <div class="flex-1">
-                                <input id="commentInput" type="text" placeholder="이 기사에 대한 의견을 남겨주세요..." class="w-full bg-transparent text-sm text-white placeholder-[#71767b] focus:outline-none">
+                                <input type="text" id="commentInput" placeholder="이 국혼에 대한 솔직한 생각을 남겨주세요..." class="w-full bg-transparent text-sm text-white placeholder-[#71767b] focus:outline-none">
+                                <div class="flex justify-end mt-2">
+                                    <button onclick="app.submitComment()" class="bg-[#1d9bf0] hover:bg-[#1a8cd8] text-white px-3 py-1 rounded-full text-xs font-bold transition">댓글 작성</button>
+                                </div>
                             </div>
-                            <button onclick="app.submitComment()" class="bg-[#1d9bf0] hover:bg-[#1a8cd8] text-white px-3 py-1 rounded-full text-xs font-bold transition">등록</button>
                         </div>
 
-                        <!-- Comment List -->
-                        <div id="commentList" class="space-y-4">
-                            ${this.renderArticleCommentsList()}
+                        <!-- Comments List -->
+                        <div class="space-y-4" id="commentsList">
+                            ${commentsData.map(c => `
+                                <div class="p-3 rounded-xl bg-[#16181c]/60 border border-[#2f3336] text-sm">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <div class="flex items-center space-x-2">
+                                            <span class="font-bold text-xs text-white">${c.author}</span>
+                                            <span class="text-[10px] text-[#71767b]">@${c.handle}</span>
+                                        </div>
+                                        <span class="text-[10px] text-[#71767b]">${c.time}</span>
+                                    </div>
+                                    <p class="text-xs text-[#e7e9ea] mb-2">${c.text}</p>
+                                    <div class="flex items-center space-x-4 text-[10px] text-[#71767b]">
+                                        <button onclick="app.likeComment(${c.id})" class="hover:text-pink-500 transition flex items-center space-x-1">
+                                            <i class="fa-regular fa-heart"></i>
+                                            <span>공감 ${c.likes}</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            `).join('')}
                         </div>
                     </section>
                 `;
             },
 
-            renderArticleCommentsList() {
-                return commentsData.map(c => `
-                    <div class="bg-[#16181c]/60 border border-[#2f3336] p-3 rounded-xl space-y-1">
-                        <div class="flex justify-between items-center">
+            renderArticleComments() {
+                const list = document.getElementById('commentsList');
+                if (!list) return;
+                list.innerHTML = commentsData.map(c => `
+                    <div class="p-3 rounded-xl bg-[#16181c]/60 border border-[#2f3336] text-sm">
+                        <div class="flex justify-between items-center mb-1">
                             <div class="flex items-center space-x-2">
                                 <span class="font-bold text-xs text-white">${c.author}</span>
                                 <span class="text-[10px] text-[#71767b]">@${c.handle}</span>
                             </div>
                             <span class="text-[10px] text-[#71767b]">${c.time}</span>
                         </div>
-                        <p class="text-sm text-[#e7e9ea]">${c.text}</p>
-                        <div class="flex items-center space-x-4 pt-1 text-xs text-[#71767b]">
-                            <button onclick="app.likeComment(${c.id})" class="flex items-center space-x-1 hover:text-pink-500 transition">
+                        <p class="text-xs text-[#e7e9ea] mb-2">${c.text}</p>
+                        <div class="flex items-center space-x-4 text-[10px] text-[#71767b]">
+                            <button onclick="app.likeComment(${c.id})" class="hover:text-pink-500 transition flex items-center space-x-1">
                                 <i class="fa-regular fa-heart"></i>
-                                <span>${c.likes}</span>
+                                <span>공감 ${c.likes}</span>
                             </button>
-                            <button class="hover:text-[#1d9bf0] transition">답글</button>
                         </div>
                     </div>
                 `).join('');
-            },
-
-            renderArticleComments() {
-                const list = document.getElementById('commentList');
-                if (list) {
-                    list.innerHTML = this.renderArticleCommentsList();
-                }
+                document.getElementById('commentCount').innerText = `총 ${commentsData.length}개 반응`;
             }
         };
 
-        window.onload = function() {
+        // Run App on Load
+        window.onload = () => {
             app.init();
         };
     </script>
